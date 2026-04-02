@@ -226,7 +226,7 @@ export default function Index() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Главная", "Успехи", "Программы", "О нас", "Контакты"].map((item, index) => (
+          {["Главная", "Программы", "О нас", "Контакты"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -244,7 +244,7 @@ export default function Index() {
           ))}
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
+        <MagneticButton variant="secondary" onClick={() => scrollToSection(3)}>
           Записаться
         </MagneticButton>
       </nav>
@@ -277,11 +277,11 @@ export default function Index() {
               <MagneticButton
                 size="lg"
                 variant="primary"
-                onClick={() => scrollToSection(4)}
+                onClick={() => scrollToSection(3)}
               >
                 Записаться на приём
               </MagneticButton>
-              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(2)}>
+              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
                 Наши программы
               </MagneticButton>
             </div>
@@ -297,7 +297,6 @@ export default function Index() {
           </div>
         </section>
 
-        <WorkSection />
         <ServicesSection />
         <AboutSection scrollToSection={scrollToSection} />
         <ContactSection />
