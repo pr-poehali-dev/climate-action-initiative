@@ -78,7 +78,7 @@ export function ContactSection() {
                   <MapPin className="h-3 w-3 text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Адрес</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">Москва, Россия</p>
+                <p className="text-base text-foreground md:text-2xl">Новороссийск, ул. Героев Десантников, 47</p>
               </div>
 
               <div
