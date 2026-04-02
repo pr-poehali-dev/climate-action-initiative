@@ -47,7 +47,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
             {[
               { value: "50+", label: "Учеников", sublabel: "Прошли обучение в нашей школе", direction: "right" },
               { value: "6", label: "Лет", sublabel: "Работы с особенными детьми", direction: "left" },
-              { value: "15", label: "Педагогов", sublabel: "Сертифицированных специалистов", direction: "right" },
+              { value: "7", label: "Педагогов", sublabel: "Сертифицированных специалистов", direction: "right" },
             ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) {
