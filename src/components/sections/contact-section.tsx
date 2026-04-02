@@ -1,34 +1,9 @@
 import { Mail, MapPin, Phone } from "lucide-react"
 import { useReveal } from "@/hooks/use-reveal"
-import { useState, type FormEvent } from "react"
 import { MagneticButton } from "@/components/magnetic-button"
 
 export function ContactSection() {
   const { ref, isVisible } = useReveal(0.3)
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      return
-    }
-
-    setIsSubmitting(true)
-
-    // Simulate form submission (replace with actual API call later)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setFormData({ name: "", email: "", message: "" })
-
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000)
-  }
 
   return (
     <section
@@ -105,78 +80,41 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Right side - Minimal form */}
-          <div className="flex flex-col justify-center">
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-              <div
-                className={`transition-all duration-700 ${
-                  isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
-                }`}
-                style={{ transitionDelay: "200ms" }}
-              >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Имя</label>
-                <input
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
-                  placeholder="Ваше имя"
-                />
-              </div>
+          {/* Right side - Messenger buttons */}
+          <div className="flex flex-col justify-center space-y-6">
+            <div
+              className={`transition-all duration-700 ${
+                isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+              }`}
+              style={{ transitionDelay: "200ms" }}
+            >
+              <p className="mb-6 max-w-sm text-sm leading-relaxed text-foreground/80 md:text-base">
+                Напишите нам — расскажите о вашем ребёнке, и мы подберём подходящую программу. Первая консультация бесплатно.
+              </p>
+            </div>
 
-              <div
-                className={`transition-all duration-700 ${
-                  isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
-                }`}
-                style={{ transitionDelay: "350ms" }}
-              >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Email</label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div
-                className={`transition-all duration-700 ${
-                  isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
-                }`}
-                style={{ transitionDelay: "500ms" }}
-              >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Сообщение</label>
-                <textarea
-                  rows={3}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-2 md:text-base"
-                  placeholder="Расскажите о вашем ребёнке и его особенностях..."
-                />
-              </div>
-
-              <div
-                className={`transition-all duration-700 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-                }`}
-                style={{ transitionDelay: "650ms" }}
-              >
-                <MagneticButton
-                  variant="primary"
-                  size="lg"
-                  className="w-full disabled:opacity-50"
-                >
-                  {isSubmitting ? "Отправка..." : "Отправить"}
+            <div
+              className={`flex flex-col gap-4 transition-all duration-700 ${
+                isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
+              }`}
+              style={{ transitionDelay: "350ms" }}
+            >
+              <a href="https://t.me/+79615239897" target="_blank" rel="noopener noreferrer">
+                <MagneticButton variant="primary" size="lg" className="w-full">
+                  Написать в Telegram
                 </MagneticButton>
-                {submitSuccess && (
-                  <p className="mt-3 text-center font-mono text-sm text-foreground/80">Сообщение отправлено!</p>
-                )}
-              </div>
-            </form>
+              </a>
+              <a href="https://wa.me/79615239897" target="_blank" rel="noopener noreferrer">
+                <MagneticButton variant="secondary" size="lg" className="w-full">
+                  Написать в WhatsApp
+                </MagneticButton>
+              </a>
+              <a href="tel:+79615239897">
+                <MagneticButton variant="secondary" size="lg" className="w-full">
+                  Позвонить нам
+                </MagneticButton>
+              </a>
+            </div>
           </div>
         </div>
       </div>
