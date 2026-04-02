@@ -270,7 +270,7 @@ export default function Index() {
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                Школа, где каждый ребёнок раскрывает свой уникальный потенциал. Индивидуальный подход, забота и профессиональная команда педагогов.
+                Каждый ребёнок достоин светлого будущего. Мы создаём пространство, где особенные дети растут, учатся и верят в себя.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">

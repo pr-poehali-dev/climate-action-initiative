@@ -34,10 +34,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
               style={{ transitionDelay: "200ms" }}
             >
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                Мы команда педагогов, дефектологов и психологов, объединённых одной целью — помочь особенным детям раскрыть себя.
+                Школа «А+В» — это место, где каждый ребёнок достоин светлого будущего. Наша команда педагогов, дефектологов и психологов работает ради одной цели.
               </p>
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                Каждый ребёнок уникален. Мы создаём индивидуальную программу, которая работает именно для него.
+                Мы верим: нет детей без способностей. Есть дети, которым нужен правильный подход — и мы его находим.
               </p>
             </div>
           </div>
