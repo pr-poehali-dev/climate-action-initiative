@@ -87,13 +87,18 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                {["Telegram", "VK", "YouTube", "WhatsApp"].map((social) => (
+                {[
+                  { label: "Telegram", href: "https://t.me/+79615239897" },
+                  { label: "WhatsApp", href: "https://wa.me/79615239897" },
+                ].map((social) => (
                   <a
-                    key={social}
-                    href="#"
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="border-b border-transparent font-mono text-xs text-foreground/60 transition-all hover:border-foreground/60 hover:text-foreground/90"
                   >
-                    {social}
+                    {social.label}
                   </a>
                 ))}
               </div>
