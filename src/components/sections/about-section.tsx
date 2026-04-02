@@ -46,7 +46,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           <div className="flex flex-col justify-center space-y-6 md:space-y-12">
             {[
               { value: "200+", label: "Учеников", sublabel: "Прошли обучение в нашей школе", direction: "right" },
-              { value: "10", label: "Лет", sublabel: "Работы с особенными детьми", direction: "left" },
+              { value: "6", label: "Лет", sublabel: "Работы с особенными детьми", direction: "left" },
               { value: "15", label: "Педагогов", sublabel: "Сертифицированных специалистов", direction: "right" },
             ].map((stat, i) => {
               const getRevealClass = () => {
